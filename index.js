@@ -4,7 +4,6 @@ import cors from 'cors';
 const app = express();
 const users = [];
 const tweets = [];
-const newTweets = [];
 const port = 5000;
 
 app.use(express.json());
@@ -16,11 +15,11 @@ app.listen(port, () => {
 
 app.post('/sign-up', (req, res) => {
     let user = req.body;
-    if(users.length === 0){
+    if (users.length === 0) {
         users.push(user);
-    }else{
+    } else {
         users.forEach(element => {
-            if(user.username !== element.username){
+            if (user.username !== element.username) {
                 users.push(user);
             }
         })
@@ -34,9 +33,9 @@ app.get('/sign-up', (req, res) => {
 
 app.post('/tweets', (req, res) => {
     let avatar = null;
-    if(users.length !== 0){
+    if (users.length !== 0) {
         users.forEach(element => {
-            if(req.body.username === element.username){
+            if (req.body.username === element.username) {
                 avatar = element.avatar;
             }
         })
@@ -51,13 +50,14 @@ app.post('/tweets', (req, res) => {
 });
 
 app.get('/tweets', (req, res) => {
-    if(tweets.length > 10){
-       tweets.forEach(element => {
-           if(newTweets.length <= 10){
-               newTweets = [...newTweets, element];
-           }
-       })
+    const tenTweets = [];
+    if (tweets.length > 10) {
+        for (let i = tweets.length - 1; i > tweets.length - 11; i--) {
+            tenTweets.push(tweets[i]);
+        }
+        res.send(tenTweets)
+    } else {
+        res.send(tweets);
     }
-    res.send(newTweets);
 })
 
