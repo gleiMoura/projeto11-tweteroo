@@ -1,6 +1,6 @@
 {
   "name": "projeto11-tweteroo",
-  "type" :"module",
+  "type": "module",
   "version": "1.0.0",
   "description": "project inspired in twitter",
   "main": "index.js",
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/gleiMoura/projeto11-tweteroo/issues"
   },
-  "homepage": "https://github.com/gleiMoura/projeto11-tweteroo#readme"
+  "homepage": "https://github.com/gleiMoura/projeto11-tweteroo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "json": "^11.0.0"
+  }
 }
