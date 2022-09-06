@@ -1,0 +1,26 @@
+{
+  "name": "projeto11-tweteroo",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "project inspired in twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gleiMoura/projeto11-tweteroo.git"
+  },
+  "author": "Gleison Moura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gleiMoura/projeto11-tweteroo/issues"
+  },
+  "homepage": "https://github.com/gleiMoura/projeto11-tweteroo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.17.3",
+    "json": "^11.0.0"
+  }
+}
